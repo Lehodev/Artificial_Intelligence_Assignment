@@ -23,6 +23,7 @@ namespace MestintBeadando
             keresok.Add(new BackTrack());
             keresok.Add(new Melysegi());
             keresok.Add(new Szelessegi());
+            keresok.Add(new BestFirst());
             InitializeComponent();
             Allapot allapot = new Allapot();
             Console.WriteLine(allapot);
@@ -32,6 +33,12 @@ namespace MestintBeadando
                 srchCB.Items.Add(kereso.GetType().Name);
             }
             srchCB.SelectedIndex = 0;
+
+            //Képek kirajzolása
+            pictureBox1.ImageLocation = "kezdo.png";
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox2.ImageLocation = "veg.png";
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
         }
 
         // Előző lépés
@@ -60,22 +67,6 @@ namespace MestintBeadando
         private void pictureBox1_Paint(object sender, PaintEventArgs e)
         {
             Kirajzol();
-            // Win kép megjelentitése
-            if (aktualisAllapotIndex + 1 == megoldasok.Count)
-            {
-                Win();
-            }
-            else
-            {
-                logPB.Image = null;
-            }
-        }
-
-        // Teljesült feltétel kép:
-        private void Win()
-        {
-            //pictureBox2.ImageLocation = "win.png";
-            //pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
         }
 
         private void Kirajzol()

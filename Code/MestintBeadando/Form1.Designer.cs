@@ -30,13 +30,17 @@ namespace MestintBeadando
         private void InitializeComponent()
         {
             this.tablePB = new System.Windows.Forms.PictureBox();
-            this.logPB = new System.Windows.Forms.PictureBox();
             this.prevBtn = new System.Windows.Forms.Button();
             this.nxtBtn = new System.Windows.Forms.Button();
             this.srchCB = new System.Windows.Forms.ComboBox();
             this.stepLbl = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.tablePB)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.logPB)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // tablePB
@@ -47,14 +51,6 @@ namespace MestintBeadando
             this.tablePB.TabIndex = 0;
             this.tablePB.TabStop = false;
             this.tablePB.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBox1_Paint);
-            // 
-            // logPB
-            // 
-            this.logPB.Location = new System.Drawing.Point(500, 13);
-            this.logPB.Name = "logPB";
-            this.logPB.Size = new System.Drawing.Size(288, 178);
-            this.logPB.TabIndex = 1;
-            this.logPB.TabStop = false;
             // 
             // prevBtn
             // 
@@ -94,21 +90,59 @@ namespace MestintBeadando
             this.stepLbl.TabIndex = 5;
             this.stepLbl.Text = "label1";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(536, 67);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(187, 147);
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Location = new System.Drawing.Point(536, 274);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(187, 147);
+            this.pictureBox2.TabIndex = 7;
+            this.pictureBox2.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(579, 30);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(94, 17);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Kezdőállapot:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(579, 232);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(79, 17);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Végállapot:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 489);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.stepLbl);
             this.Controls.Add(this.srchCB);
             this.Controls.Add(this.nxtBtn);
             this.Controls.Add(this.prevBtn);
-            this.Controls.Add(this.logPB);
             this.Controls.Add(this.tablePB);
             this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.tablePB)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.logPB)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -117,11 +151,14 @@ namespace MestintBeadando
         #endregion
 
         private System.Windows.Forms.PictureBox tablePB;
-        private System.Windows.Forms.PictureBox logPB;
         private System.Windows.Forms.Button prevBtn;
         private System.Windows.Forms.Button nxtBtn;
         private System.Windows.Forms.ComboBox srchCB;
         private System.Windows.Forms.Label stepLbl;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
 

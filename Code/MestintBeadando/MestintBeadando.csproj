@@ -57,6 +57,7 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Keresok\Backtrack.cs" />
+    <Compile Include="Keresok\BestFirst.cs" />
     <Compile Include="Keresok\Kereso.cs" />
     <Compile Include="Keresok\Melysegi.cs" />
     <Compile Include="Keresok\Szelessegi.cs" />
@@ -73,6 +74,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -87,6 +89,10 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="kezdo.png" />
+    <None Include="Resources\kezdo.png" />
+    <Content Include="veg.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
