@@ -18,3 +18,13 @@ C:\Users\lcs00\OneDrive\Asztali gép\MestintBeadando\Code\MestintBeadando\obj\De
 C:\Users\lcs00\OneDrive\Asztali gép\MestintBeadando\Code\MestintBeadando\bin\Debug\MestintBeadando.exe.config
 C:\Users\lcs00\OneDrive\Asztali gép\MestintBeadando\Code\MestintBeadando\bin\Debug\MestintBeadando.exe
 C:\Users\lcs00\OneDrive\Asztali gép\MestintBeadando\Code\MestintBeadando\bin\Debug\MestintBeadando.pdb
+C:\Users\lcs00\OneDrive\Asztali gép\MestintBeadando\Mestint_Beadando\Code\MestintBeadando\bin\Debug\MestintBeadando.exe.config
+C:\Users\lcs00\OneDrive\Asztali gép\MestintBeadando\Mestint_Beadando\Code\MestintBeadando\bin\Debug\MestintBeadando.exe
+C:\Users\lcs00\OneDrive\Asztali gép\MestintBeadando\Mestint_Beadando\Code\MestintBeadando\bin\Debug\MestintBeadando.pdb
+C:\Users\lcs00\OneDrive\Asztali gép\MestintBeadando\Mestint_Beadando\Code\MestintBeadando\obj\Debug\MestintBeadando.csprojAssemblyReference.cache
+C:\Users\lcs00\OneDrive\Asztali gép\MestintBeadando\Mestint_Beadando\Code\MestintBeadando\obj\Debug\MestintBeadando.Form1.resources
+C:\Users\lcs00\OneDrive\Asztali gép\MestintBeadando\Mestint_Beadando\Code\MestintBeadando\obj\Debug\MestintBeadando.Properties.Resources.resources
+C:\Users\lcs00\OneDrive\Asztali gép\MestintBeadando\Mestint_Beadando\Code\MestintBeadando\obj\Debug\MestintBeadando.csproj.GenerateResource.cache
+C:\Users\lcs00\OneDrive\Asztali gép\MestintBeadando\Mestint_Beadando\Code\MestintBeadando\obj\Debug\MestintBeadando.csproj.CoreCompileInputs.cache
+C:\Users\lcs00\OneDrive\Asztali gép\MestintBeadando\Mestint_Beadando\Code\MestintBeadando\obj\Debug\MestintBeadando.exe
+C:\Users\lcs00\OneDrive\Asztali gép\MestintBeadando\Mestint_Beadando\Code\MestintBeadando\obj\Debug\MestintBeadando.pdb

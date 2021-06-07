@@ -7,54 +7,53 @@ using System.Threading.Tasks;
 
 namespace MestintBeadando.Keresok
 {
-    class Melysegi : Kereso
+    class Szelessegi : Kereso
     {
-        public Melysegi()
+        public Szelessegi()
         {
             Kereses();
         }
 
         public override void Kereses()
         {
-            Stack<Csomopont> nyiltCsucsok = new Stack<Csomopont>();
+            Queue<Csomopont> nyiltCsucsok = new Queue<Csomopont>();
             List<Csomopont> zartCsucsok = new List<Csomopont>();
 
-            nyiltCsucsok.Push(new Csomopont(new Allapot(), null));
+            nyiltCsucsok.Enqueue(new Csomopont(new Allapot(), null));
 
-            while (nyiltCsucsok.Count > 0 && nyiltCsucsok.Peek().Allapot.Celfeltetel() == false)
+            while (nyiltCsucsok.Count > 0 && !nyiltCsucsok.Peek().Allapot.Celfeltetel())
             {
-                Csomopont aktualisCsomopont = nyiltCsucsok.Pop();
-
+                Csomopont aktualisCsomopont = nyiltCsucsok.Dequeue();
                 foreach (Operator op in Operatorok)
                 {
                     if (op.Elofeltetel(aktualisCsomopont.Allapot))
                     {
                         Allapot ujAllapot = op.HuszarAthelyezes(aktualisCsomopont.Allapot);
+                        //szülő beállítása
                         Csomopont ujCsomopont = new Csomopont(ujAllapot, aktualisCsomopont);
 
-                        if (nyiltCsucsok.Contains(ujCsomopont) == false && zartCsucsok.Contains(ujCsomopont) == false)
+                        if (!nyiltCsucsok.Contains(ujCsomopont) && !zartCsucsok.Contains(ujCsomopont))
                         {
-                            nyiltCsucsok.Push(ujCsomopont);
+                            nyiltCsucsok.Enqueue(ujCsomopont);
                         }
                     }
                 }
-
                 zartCsucsok.Add(aktualisCsomopont);
             }
-
 
             if (nyiltCsucsok.Count > 0)
             {
                 Csomopont celCsomopont = nyiltCsucsok.Peek();
+
                 while (celCsomopont != null)
                 {
                     this.Utvonal.Add(celCsomopont.Allapot);
                     celCsomopont = celCsomopont.Szulo;
                 }
+
                 this.Utvonal.Reverse();
             }
 
         }
-
     }
 }

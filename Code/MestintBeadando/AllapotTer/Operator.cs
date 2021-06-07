@@ -37,63 +37,97 @@ namespace MestintBeadando.AllapotTer
         // Előfeltétel
         public bool Elofeltetel(Allapot allapot)
         {
-            for (int i = allapot.huszarok[mit].Sor - 1; i <= allapot.huszarok[mit].Sor + 1; i++)
+            // Segédváltozók
+            int segedSor = -2;
+            int segedOszlop = -2;
+            for (int n = 0; n < 6; n++)
             {
-                // Oszlop
-                for (int j = allapot.huszarok[mit].Oszlop - 1; j <= allapot.huszarok[mit].Oszlop + 1; j++)
+                if (n == 0 || n == 2 || n == 4)
                 {
-                    // Ha a vizsgált állapot nem esik a játéktáblán kívülre
-                    if (i >= 0 && i <= 3 && j >= 0 && j <= 3)
+                    // Ha a huszárral lépünk
+                    if (mit== 0 || mit == 1 || mit == 2)
                     {
-                        // Ugyan az a sor || oszlop
-                        if (i != allapot.huszarok[mit].Sor && j != allapot.huszarok[mit].Oszlop)
+                        // Ha van L-alakban lépés azt eltároljuk
+                        bool isThereValidMove = false;
+
+                        for (int i = allapot.huszarok[mit].Sor - 2; i <= allapot.huszarok[mit].Sor + 2; i++)
                         {
-                            if (mit == 0|| mit == 1 || mit == 2 || mit == 3 || mit == 4 || mit == 5)
+                            for (int j = allapot.huszarok[mit].Oszlop - 2; j <= allapot.huszarok[mit].Oszlop + 2; j++)
                             {
-                                if (allapot.huszarok[mit].Sor + 1 < hova.Sor || allapot.huszarok[mit].Sor - 1 > hova.Sor ||
-                                                   allapot.huszarok[mit].Oszlop + 1 < hova.Oszlop || allapot.huszarok[mit].Oszlop - 1 > hova.Oszlop)
+                                // Ha a vizsgált állapot nem esik a játéktáblán kívülre
+                                if (i >= 0 && i <= 3 && j >= 0 && j <= 3)
                                 {
-                                    return false;
-
+                                    if (i != allapot.huszarok[mit].Sor && j != allapot.huszarok[mit].Oszlop &&
+                                    Math.Abs(segedSor) != Math.Abs(segedOszlop))
+                                    {
+                                        if (hova.Sor == i && hova.Oszlop == j)
+                                        {
+                                            isThereValidMove = true;
+                                            break;
+                                        }
+                                    }
                                 }
-                                //// Ha van L-alakban lépés azt eltároljuk
-                                //bool isThereValidMove = false;
-
-                                //for (int i = allapot.huszarok[mit].Sor - 2; i <= allapot.huszarok[mit].Sor + 2; i++)
-                                //{
-                                //    for (int j = allapot.huszarok[mit].Oszlop - 2; j <= allapot.huszarok[mit].Oszlop + 2; j++)
-                                //    {
-                                //        // Ha a vizsgált állapot nem esik a játéktáblán kívülre
-                                //        if (i >= 0 && i <= 3 && j >= 0 && j <= 3)
-                                //        {
-                                //            if (i != allapot.huszarok[mit].Sor && j != allapot.huszarok[mit].Oszlop &&
-                                //            Math.Abs(segedSor) != Math.Abs(segedOszlop))
-                                //            {
-                                //                if (hova.Sor == i && hova.Oszlop == j)
-                                //                {
-                                //                    isThereValidMove = true;
-                                //                    break;
-                                //                }
-                                //            }
-                                //        }
-
-                                //        segedOszlop++;
-                                //    }
-
-                                //    segedSor++;
-                                //    segedOszlop = -2;
-                                //    // Ha nem volt L-alakban lépés
-                                //    if (isThereValidMove == false)
-                                //    {
-                                //        return false;
-                                //    }
-                                //}
-                                //Foglalt - e a pozíció
+                                segedOszlop++;
                             }
+
+                            segedSor++;
+                            segedOszlop = -2;
+                        }
+
+                        // Ha nem volt L-alakban lépés
+                        if (isThereValidMove == false)
+                        {
+                            return false;
+                        }
+                    }
+                    else
+                    {
+                       
+                    }
+                }
+                else
+                {
+                    // Ha a huszárral lépünk
+                    if (mit == 3 || mit == 4 || mit == 5)
+                    {
+                        // Ha van L-alakban lépés azt eltároljuk
+                        bool isThereValidMove = false;
+
+                        for (int i = allapot.huszarok[mit].Sor - 2; i <= allapot.huszarok[mit].Sor + 2; i++)
+                        {
+                            for (int j = allapot.huszarok[mit].Oszlop - 2; j <= allapot.huszarok[mit].Oszlop + 2; j++)
+                            {
+                                // Ha a vizsgált állapot nem esik a játéktáblán kívülre
+                                if (i >= 0 && i <= 3 && j >= 0 && j <= 3)
+                                {
+                                    if (i != allapot.huszarok[mit].Sor && j != allapot.huszarok[mit].Oszlop &&
+                                    Math.Abs(segedSor) != Math.Abs(segedOszlop))
+                                    {
+                                        if (hova.Sor == i && hova.Oszlop == j)
+                                        {
+                                            isThereValidMove = true;
+                                            break;
+                                        }
+                                    }
+                                }
+
+                                segedOszlop++;
+                            }
+
+                            segedSor++;
+                            segedOszlop = -2;
+                        }
+
+                        // Ha nem volt L-alakban lépés
+                        if (isThereValidMove == false)
+                        {
+                            return false;
                         }
                     }
                 }
             }
+
+            //Ha már foglalt a hely
             for (int b = 0; b < Allapot.HUSZAROKSZAMA; b++)
             {
                 if (hova.Sor == allapot.huszarok[b].Sor && hova.Oszlop == allapot.huszarok[b].Oszlop)
@@ -103,5 +137,6 @@ namespace MestintBeadando.AllapotTer
             }
             return true;
         }
+
     }
 }

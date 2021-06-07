@@ -21,7 +21,8 @@ namespace MestintBeadando
         public Form1()
         {
             keresok.Add(new BackTrack());
-            //keresok.Add(new Melysegi());
+            keresok.Add(new Melysegi());
+            keresok.Add(new Szelessegi());
             InitializeComponent();
             Allapot allapot = new Allapot();
             Console.WriteLine(allapot);

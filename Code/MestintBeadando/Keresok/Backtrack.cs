@@ -15,7 +15,6 @@ namespace MestintBeadando.Keresok
 
             
         }
-        int x = 0;
         public override void Kereses()
         {
             Stack<Csomopont> ut = new Stack<Csomopont>();
@@ -42,11 +41,6 @@ namespace MestintBeadando.Keresok
                     }
                     aktualisCsomopont.OperatorIndex++;
 
-                    if (x == 200)
-                    {
-                        break;
-                    }
-                    x++;
                 }
 
                 else
