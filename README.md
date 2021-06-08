@@ -3,8 +3,8 @@ A Mesterséges Intelligencia tárgyhoz tartozó beadandó repoja.
 # Feladat:
 ![alt text](img/feladat.PNG)
 
-##Kezdőállapot:
+## Kezdőállapot:
 ![alt text](img/kezdo.png)
 
-##Végállapot:
+## Végállapot:
 ![alt text](img/veg.png)

@@ -28,7 +28,7 @@ namespace MestintBeadando.Keresok
             {
                 Csomopont aktualisCsomopont = nyiltCsucsok.Pop();
 
-                List<Csomopont> aktualisGyerekek = new List<Csomopont>();
+                List<Csomopont> aktualisHuszar = new List<Csomopont>();
                 foreach (Operator op in Operatorok)
                 {
                     if (op.Elofeltetel(aktualisCsomopont.Allapot))
@@ -38,13 +38,13 @@ namespace MestintBeadando.Keresok
 
                         if (!nyiltCsucsok.Contains(ujCsomopont) && !zartCsucsok.Contains(ujCsomopont))
                         {
-                            aktualisGyerekek.Add(ujCsomopont);
+                            aktualisHuszar.Add(ujCsomopont);
                         }
                     }
                 }
 
                 // Heurisztika alapján történő kiértékelés
-                aktualisGyerekek.Sort(
+                aktualisHuszar.Sort(
                     delegate (Csomopont cs1, Csomopont cs2)
                     {
                         if (cs1.Heurisztika > cs2.Heurisztika)
@@ -61,8 +61,8 @@ namespace MestintBeadando.Keresok
                         }
                     });
 
-                // Aktuális gyerekek eltárolása a nyílt csúcsokban
-                foreach (Csomopont cs in aktualisGyerekek)
+                // Aktuális huszár eltárolása a nyílt csúcsokban
+                foreach (Csomopont cs in aktualisHuszar)
                 {
                     nyiltCsucsok.Push(cs);
                 }
