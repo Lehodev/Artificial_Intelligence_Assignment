@@ -50,10 +50,10 @@ namespace MestintBeadando.AllapotTer
             int[] sHuszar3 = { 0,2 };
             int[] vHuszar1 = { 2,0 };
             int[] vHuszar2 = { 2,1 };
-            int[] vHuszar3 = { 2, 2 };
+            int[] vHuszar3 = { 2,2 };
 
             this.heurisztika = 0;
-            if (szulo != null && CélMezőnVanEaBábú(szulo.allapot.huszarok[0], sHuszar1[0], sHuszar1[1]))
+            if (szulo != null && CélMezőnVanEaHuszár(szulo.allapot.huszarok[0], sHuszar1[0], sHuszar1[1]))
             {
                 // Ha a huszár a célmező mellett áll
                 MinelKozelebbKerul(allapot.huszarok[0], sHuszar1[0], sHuszar1[1]);
@@ -64,7 +64,7 @@ namespace MestintBeadando.AllapotTer
                     this.heurisztika -= 15;
                 }
             }
-            else if (szulo != null && CélMezőnVanEaBábú(szulo.allapot.huszarok[1], sHuszar2[0], sHuszar2[1]))
+            else if (szulo != null && CélMezőnVanEaHuszár(szulo.allapot.huszarok[1], sHuszar2[0], sHuszar2[1]))
             {
                 MinelKozelebbKerul(allapot.huszarok[1], sHuszar2[0], sHuszar2[1]);
 
@@ -73,7 +73,7 @@ namespace MestintBeadando.AllapotTer
                     this.heurisztika -= 15;
                 }
             }
-            else if (szulo != null && CélMezőnVanEaBábú(szulo.allapot.huszarok[2], sHuszar3[0], sHuszar3[1]))
+            else if (szulo != null && CélMezőnVanEaHuszár(szulo.allapot.huszarok[2], sHuszar3[0], sHuszar3[1]))
             {
                 MinelKozelebbKerul(allapot.huszarok[2], sHuszar3[0], sHuszar3[1]);
 
@@ -82,7 +82,7 @@ namespace MestintBeadando.AllapotTer
                     this.heurisztika -= 15;
                 }
             }
-            else if (szulo != null && CélMezőnVanEaBábú(szulo.allapot.huszarok[3], vHuszar1[0], vHuszar1[1]))
+            else if (szulo != null && CélMezőnVanEaHuszár(szulo.allapot.huszarok[3], vHuszar1[0], vHuszar1[1]))
             {
                 MinelKozelebbKerul(allapot.huszarok[3], vHuszar1[0], vHuszar1[1]);
 
@@ -91,7 +91,7 @@ namespace MestintBeadando.AllapotTer
                     this.heurisztika -= 15;
                 }
             }
-            else if (szulo != null && CélMezőnVanEaBábú(szulo.allapot.huszarok[3], vHuszar2[0], vHuszar2[1]))
+            else if (szulo != null && CélMezőnVanEaHuszár(szulo.allapot.huszarok[3], vHuszar2[0], vHuszar2[1]))
             {
                 MinelKozelebbKerul(allapot.huszarok[4], vHuszar2[0], vHuszar2[1]);
 
@@ -108,8 +108,8 @@ namespace MestintBeadando.AllapotTer
             this.osszkoltseg = this.koltseg + (-1) * this.heurisztika;
         }
 
-        // Célmezőn van-e a bábú
-        bool CélMezőnVanEaBábú(Huszarok huszar, int cS, int cO)
+        // Célmezőn van-e a huszár
+        bool CélMezőnVanEaHuszár(Huszarok huszar, int cS, int cO)
         {
             for (int i = cS; i <= cS; i++)
             {
@@ -146,7 +146,6 @@ namespace MestintBeadando.AllapotTer
         // Minél közelebb kerül a huszár a célmezőhöz, annál nagyobb súlyozás
         void MinelKozelebbKerul(Huszarok h, int cS, int cO)
         {
-            // Minél közelebb kerül a huszár sora a célmező sorához, annál nagyobb súly
             if (h.Sor > cS)
             {
                 this.heurisztika += (7 - (h.Sor - cS));
@@ -157,7 +156,6 @@ namespace MestintBeadando.AllapotTer
             }
             else this.heurisztika += 7;
 
-            // Minél közelebb kerül a huszárok oszlopa a célmező oszlopához, annál nagyobb súly
             if (h.Sor > cO)
             {
                 this.heurisztika += (7 - (h.Sor - cO));
